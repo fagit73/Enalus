@@ -85,6 +85,25 @@
     color: #f4a261; /* Color al pasar el ratón */
 }
 
+header nav img{ /* Imagen carrito */
+    height: 25px;
+  }
+  
+  #cuenta-carrito{
+    position: absolute;
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    aspect-ratio: 1;
+    text-align: center;
+    /* margin-bottom: 15px; */
+  }
+
+
+
+
 /* Navbar en pantallas pequeñas */
 @media (max-width: 767px) {
     .navbar-nav {
@@ -205,15 +224,14 @@
 
 /*Estilos formulario */
 
-/* Estilo base para la sección del formulario */
+/* Estilo base */
 .centraformulario {
-    max-width: 900px; /* Limitar el ancho máximo del formulario en pantallas grandes */
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible en pantallas grandes */
-    margin: 50px auto; /* Centramos el formulario y agregamos separación arriba y abajo */
+    max-width: 900px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #f0f8ff; /* Fondo suave con un tono claro (blanco azulado) */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el formulario */
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -231,7 +249,8 @@ h2 {
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; /* Espaciado entre los campos del formulario */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .input-group label {
@@ -242,49 +261,27 @@ h2 {
 
 .input-group input,
 .input-group textarea {
-    width: 100%; /* Asegura que los campos de entrada ocupen todo el ancho del formulario */
+    width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
-    background-color: #fff; /* Fondo blanco para los inputs */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para efectos */
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Estilo para los inputs cuando están enfocados */
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #007bff; /* Color azul cuando el input tiene el foco */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efecto de sombra suave */
-    outline: none; /* Eliminar el borde predeterminado de los navegadores */
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
 }
 
-/* Estilo para el área de texto */
-.input-group textarea {
-    resize: vertical; /* Permitir que el área de texto se ajuste verticalmente */
+textarea {
+    resize: vertical;
 }
 
-.form-txt {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.875rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.form-txt a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.form-txt a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para el botón */
 button.btn {
-    width: 100%; /* El botón ocupa todo el ancho disponible */
     padding: 12px;
     background-color: #007bff;
     color: white;
@@ -299,58 +296,21 @@ button.btn:hover {
     background-color: #0056b3;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    /* Ajustes para pantallas más pequeñas */
-    .centraformulario {
-        width: 90%; /* El formulario ocupa el 90% del ancho disponible en pantallas pequeñas */
-        margin: 50px auto; /* Separación de 50px arriba y abajo */
-    }
-
-    h2 {
-        font-size: 1.5rem; /* Reducir el tamaño del título en pantallas pequeñas */
-    }
-
-    .input-group input,
-    .input-group textarea {
-        font-size: 0.95rem; /* Reducir el tamaño de la fuente en los inputs y textarea */
-    }
-
-    .form-txt {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .form-txt a {
-        margin-bottom: 10px; /* Separar los links cuando están en columnas */
-    }
+/* Errores */
+input.error, textarea.error {
+    border-color: #d9534f;
+    background-color: #fdecea;
 }
 
-@media (max-width: 480px) {
-    /* Ajustes para pantallas muy pequeñas (móviles) */
-    .centraformulario {
-        width: 95%; /* El formulario ocupa el 95% del ancho en pantallas móviles muy pequeñas */
-        margin: 50px auto; /* Separación de 50px arriba y abajo */
-    }
-
-    h2 {
-        font-size: 1.25rem; /* Reducir más el tamaño del título */
-    }
-
-    .input-group input,
-    .input-group textarea {
-        font-size: 0.875rem; /* Reducir el tamaño de la fuente en los inputs y textarea */
-    }
-
-    button.btn {
-        padding: 10px 18px; /* Hacer el botón más pequeño */
-        font-size: 0.875rem; /* Reducir el tamaño de la fuente del botón */
-    }
+#error-message {
+    color: #d9534f;
+    margin-top: 10px;
 }
 
 
 
+
+/** fin estilos formulario **/
 
 
 /*** Estilos del Footer ****/

@@ -1,0 +1,60 @@
+
+
+    [
+        {
+            "id": 1,
+            "nombre": "1 Kg - Elegi 4 sabores",
+            "img": "../img/unkilopostres.jpeg",
+            "precio": 28000
+        },
+        
+        {
+            "id": 2,
+            "nombre": "1/2 Kg - Elegi 4 sabores",
+            "img": "../img/medio.jpeg",
+            "precio": 14000
+        },
+        
+        {
+            "id": 3,
+            "nombre": "1/4 Kg - Elegi 3 sabores",
+            "img": "../img/uncuarto.jpeg",
+            "precio": 7000        
+        },
+        
+        {
+            "id": 4,
+            "nombre": "Almendrado",
+            "img": "../img/almendrado.jpeg",
+            "precio": 32000       
+        },
+        
+        {
+            "id": 5,
+            "nombre": "Bombas Suizas",
+            "img": "../img/bombassuizas.jpeg",
+            "precio": 5000        
+        },
+        
+        {
+            "id": 6,
+            "nombre": "Postre Helado",
+            "img": "../img/torta.jpeg",
+            "precio": 35000        
+        },
+        
+        {
+            "id": 7,
+            "nombre": "Postre Africano",
+            "img": "../img/africano.jpeg",
+            "precio": 35000       
+        },
+    
+        {
+            "id": 8,
+            "nombre": "Promo Eventos",
+            "img": "../img/corazones.jpeg",
+            "precio": 15000        
+        }
+        
+        ]

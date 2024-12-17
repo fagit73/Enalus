@@ -85,6 +85,22 @@
     color: #f4a261; /* Color al pasar el ratón */
 }
 
+header nav img{ /* Imagen carrito */
+    height: 25px;
+  }
+  
+  #cuenta-carrito{
+    position: absolute;
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    aspect-ratio: 1;
+    text-align: center;
+    /* margin-bottom: 15px; */
+  }
+
 /* Navbar en pantallas pequeñas */
 @media (max-width: 767px) {
     .navbar-nav {
@@ -365,6 +381,136 @@ h1 {
 
 
 /*fin estilos sabores */
+
+
+/*estilos postres y promos */
+
+/* Estilos para la nueva sección */
+section {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #d9534f;
+    margin-bottom: 40px;
+}
+
+/* Contenedor para las tarjetas */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+/* Tarjeta individual */
+.tarjeta-wrap {
+    flex: 1 1 calc(33.33% - 20px); /* 3 tarjetas por fila */
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.tarjeta:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo de la tarjeta */
+.tarjeta {
+    position: relative;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* Parte delantera de la tarjeta */
+.adelante {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+}
+
+.adelante img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Título sobre la imagen */
+.adelante h4 {
+    position: absolute;
+    top: 10px; /* Ubicado al principio de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para asegurar la legibilidad */
+    border-radius: 5px;
+}
+
+/* Responsive para pantallas medianas */
+@media (max-width: 1024px) {
+    .tarjeta-wrap {
+        flex: 1 1 calc(50% - 20px); /* 2 tarjetas por fila */
+    }
+
+    .adelante h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .tarjeta-wrap {
+        flex: 1 1 100%; /* 1 tarjeta por fila */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .adelante h4 {
+        font-size: 1.1rem;
+    }
+
+    .tarjeta {
+        height: 300px; /* Altura de la tarjeta en pantallas pequeñas */
+    }
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .tarjeta {
+        height: 250px; /* Ajustamos la altura de las tarjetas para pantallas más pequeñas */
+    }
+
+    .adelante h4 {
+        font-size: 1rem; /* Ajustamos el tamaño de la fuente del título */
+    }
+}
+
+
+
+
+
+/*fin estilos postres y promos */
+
+
+
 
 
 
