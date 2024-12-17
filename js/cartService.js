@@ -42,3 +42,4 @@ function obtenerCarrito() {
 document.addEventListener('DOMContentLoaded', actualizarCantidadEnInterfaz);
 
 export { agregarAlCarrito, obtenerCarrito };
+
