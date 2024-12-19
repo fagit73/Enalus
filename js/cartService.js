@@ -1,45 +1,35 @@
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 
-// Función para agregar producto al carrito
-function agregarAlCarrito(producto) {
-    const index = carrito.findIndex(item => item.id === producto.id);
+export function agregarAlCarrito(producto) {
+    // Verifica si ya hay un carrito en localStorage
+    let memoria = JSON.parse(localStorage.getItem("carrito")) || [];
     
-    if (index !== -1) {
-        carrito[index].cantidad += 1; // Incrementar cantidad si ya existe en el carrito
-    } else {
+    // Verifica si el producto ya está en el carrito
+    const indiceProducto = memoria.findIndex(item => item.id === producto.id);
+    
+    if (indiceProducto === -1) {
+        // Si no está, lo agregamos con cantidad 1
         producto.cantidad = 1;
-        carrito.push(producto);
+        memoria.push(producto);
+    } else {
+        // Si ya está, incrementamos la cantidad
+        memoria[indiceProducto].cantidad++;
     }
 
-    actualizarCarrito();
+    // Guardamos el carrito actualizado en localStorage
+    localStorage.setItem("carrito", JSON.stringify(memoria));
+
+    // Actualizamos el contador en el header
+    actualizarNumeroCarrito();
 }
 
-// Actualizar el almacenamiento local y la cantidad del carrito visible
-function actualizarCarrito() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarCantidadEnInterfaz();
+export function actualizarNumeroCarrito() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const totalProductos = carrito.reduce((acumulado, producto) => acumulado + producto.cantidad, 0);
+    cuentaCarritoElement.innerText = totalProductos;
 }
 
-// Función para obtener la cantidad total de productos en el carrito
-function obtenerCantidadTotal() {
-    return carrito.reduce((total, producto) => total + producto.cantidad, 0);
-}
 
-// Actualizar la cantidad en la interfaz
-function actualizarCantidadEnInterfaz() {
-    const cuentaCarrito = document.getElementById('cuenta-carrito');
-    if (cuentaCarrito) {
-        cuentaCarrito.textContent = obtenerCantidadTotal();
-    }
-}
 
-// Función para recuperar el carrito completo
-function obtenerCarrito() {
-    return carrito;
-}
 
-// Al inicializar la página, actualizamos la cantidad del carrito
-document.addEventListener('DOMContentLoaded', actualizarCantidadEnInterfaz);
-
-export { agregarAlCarrito, obtenerCarrito };
 

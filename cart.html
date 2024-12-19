@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../CSS/tienda.css">
   <link rel="stylesheet" href="../CSS/resena.css">
   <link rel="stylesheet" href="../CSS/contacto.css">
+  <link rel="stylesheet" href="./cart.css">
  
   
   <!--  Vinculamos con la biblioteca de Animate -->
@@ -72,15 +73,15 @@
                             <a class="nav-link" href="../templates/contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/cart.html" id="cart">
+                            <a class="nav-link" href="cart.html" id="cart">
                                 <img src="../img/iconos/shopping-cart.png" alt="">
                                 <span id="cuenta-carrito">0</span>
                             </a>
-                        </li>                
-
-                                                                   
-
+                        </li>               
                     </ul>
+
+
+
                   </div>
                 </div>
               </nav>
@@ -140,32 +141,20 @@
 
 
         <h1>Carrito de Compras</h1>
-    <div id="contenedor-carrito"></div>
-
-    <script>
-        const mostrarCarrito = () => {
-            const contenedor = document.getElementById('contenedor-carrito');
-            const carrito = obtenerCarrito();
-            contenedor.innerHTML = '';
-
-            if (carrito.length > 0) {
-                carrito.forEach(item => {
-                    const elemento = document.createElement('div');
-                    elemento.innerHTML = `<p>${item.nombre} - Cantidad: ${item.cantidad} - Precio: $${item.precio}</p>`;
-                    contenedor.appendChild(elemento);
-                });
-            } else {
-                contenedor.innerHTML = '<p>No hay productos en el carrito.</p>';
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', mostrarCarrito);
-    </script>
-
+        <div id="cart-container"></div>
+        <div id="totales">
+            <p>Total Unidades: <span id="cantidad">0</span></p>
+            <p>Total Precio: $<span id="precio">0</span></p>
+            <button id="comprar" class="btn btn-success">Comprar</button>
+            <button id="reiniciar" class="btn btn-warning">Reiniciar</button>
+        </div>
+        <p id="carrito-vacio">Tu carrito está vacío.</p>
 
 
 
         
+
+
         
         
 
@@ -259,10 +248,10 @@
         crossorigin="anonymous"></script>
 
 <!-- Enlaces a scripts  -->
+
+<script src="./js/cartService.js" defer></script>
+<script src="./js/cart.js" defer></script>
 <script src="./js/index.js"></script>
-<script src="./js/cart.js"></script>
-<script src="./js/cartService.js"></script>
-<script src="./js/helados.js"></script>
 
 
 </body>
