@@ -34,12 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <h5 class="card-title">${producto.nombre}</h5>
                                 <p class="card-text">Precio: $${producto.precio}</p>
                                 <p class="card-text">Cantidad: ${producto.cantidad}</p>
-                                <button class="btn btn-danger" onclick="eliminarProducto('${producto.id}')">Eliminar</button>
+                                <!-- Modificado: Añadido el evento eliminarProducto directamente -->
+                                <button class="btn btn-danger" id="eliminar-${producto.id}">Eliminar</button>
                             </div>
                         </div>
                     </div>
                 `;
                 productosCarrito.appendChild(divProducto);
+
+                // Asignar el evento de eliminar al botón
+                document.getElementById(`eliminar-${producto.id}`).addEventListener('click', function() {
+                    eliminarProducto(producto.id);
+                });
             });
         }
 
@@ -48,8 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para eliminar un producto del carrito
     function eliminarProducto(idProducto) {
+        // Filtramos el producto por su id y lo eliminamos
         carrito = carrito.filter(producto => producto.id !== idProducto);
+        // Actualizamos el carrito en el localStorage
         localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        // Actualizamos los totales y renderizamos el carrito nuevamente
+        actualizarTotales();
         renderizarCarrito();
     }
 
@@ -85,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Renderizamos el carrito al cargar la página
     renderizarCarrito();
 });
+
 
 
 

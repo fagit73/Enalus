@@ -1,3 +1,5 @@
+// Asegurémonos de que las funciones estén definidas correctamente en cartService.js
+
 const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 
 export function agregarAlCarrito(producto) {
@@ -28,6 +30,16 @@ export function actualizarNumeroCarrito() {
     const totalProductos = carrito.reduce((acumulado, producto) => acumulado + producto.cantidad, 0);
     cuentaCarritoElement.innerText = totalProductos;
 }
+
+export function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem('carrito')) || [];
+}
+
+export function guardarCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+
 
 
 
